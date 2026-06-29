@@ -1,3 +1,4 @@
+Profe, este es el primer codigo que hice, el del autonomo 2
 
 print("Bienvenido al generador de contraseñas")
 
