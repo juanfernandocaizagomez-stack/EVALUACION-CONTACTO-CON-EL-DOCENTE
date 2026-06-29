@@ -1,0 +1,26 @@
+print("Bienvenido al generador de contraseñas")
+
+nm_letras = int(input("¿Cuantas letras quieres en tu clave?"))
+nm_numeros = int(input("¿Cuantos numeros quieres en tu clave?"))
+nm_simbolos = int(input("¿Cuantos simbolos quieres en tu clave?"))
+
+lista_letras = [random.choice(letras) for _ in range(nm_letras)]
+lista_numeros =[random.choice(numeros) for _ in range(nm_numeros)]
+lista_simbolos = [random.choice(simbolos) for _ in range(nm_simbolos)]
+
+lista_contraseña = lista_letras + lista_numeros + lista_simbolos
+random.shuffle(lista_contraseña)
+print("Tu contraseña es: ", ''.join(lista_contraseña) )
+
+contador = 1
+while contador <= 5:
+    contraseña_usuario = input("Introduce tu contraseña: ")
+    if contraseña_usuario == ''.join(lista_contraseña):
+        print("Contraseña correcta, bienvenido!")
+        break
+    else:
+        print("Contraseña incorrecta")
+        contador += 1
+
+else:
+    print("Has agotado tus intentos, mala suerte")
